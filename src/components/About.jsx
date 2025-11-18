@@ -50,7 +50,7 @@ function About() {
             ))}
 
             <img
-              src="./imgs/mb-logo.png"
+              src="/imgs/mb-logo.png"
               alt="Logo"
               width={30}
               height={30}
