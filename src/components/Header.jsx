@@ -11,7 +11,7 @@ const Header = () => {
         <h1>
           <a href="/" className="logo">
             <img
-              src="/imgs/MB-Favicon.png"
+              src="/MB-Portfolio/imgs/MB-Favicon.png"
               width={40}
               height={40}
               alt="Marko Bjelica"
