@@ -1,4 +1,5 @@
 import { ButtonPrimary, ButtonOutline } from "./Button";
+import CV from "../../public/MarkoBjelicaCV(eng).pdf";
 
 function Hero() {
   return (
@@ -44,7 +45,12 @@ function Hero() {
           </h2>
 
           <div className="flex items-center gap-3">
-            <ButtonPrimary label="Download CV" icon="download" />
+            <ButtonPrimary
+              href={CV}
+              target="_blank"
+              label="Download CV"
+              icon="download"
+            />
             <ButtonOutline
               href="#about"
               label="Scroll Down"
