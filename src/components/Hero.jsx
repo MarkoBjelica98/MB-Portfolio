@@ -1,5 +1,4 @@
 import { ButtonPrimary, ButtonOutline } from "./Button";
-import CV from "../../public/MarkoBjelicaCV(eng).pdf";
 
 function Hero() {
   return (
