@@ -59,7 +59,7 @@ function Hero() {
 
           <div className='flex flex-wrap items-center gap-3 reveal-up'>
             <ButtonPrimary
-              href='/public/Marko Bjelica (ENG) CV.pdf'
+              href='/MarkoBjelicaCV(ENG).pdf'
               target='_blank'
               label='Download CV'
               icon='download'
