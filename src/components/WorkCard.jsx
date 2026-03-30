@@ -25,14 +25,14 @@ function WorkCard({ content, imgSrc, name, classes = '' }) {
         </p>
 
         <div className='flex items-center gap-2'>
-          <figure className='img-box rounded-lg'>
+          <figure className='img-box rounded-lg w-16 h-16 min-w-16 min-h-16 flex-shrink-0 overflow-hidden'>
             <img
               src={imgSrc}
               alt={name}
               width={44}
               height={44}
               loading='lazy'
-              className='img-cover'
+              className='img-cover w-full h-full object-cover'
             />
           </figure>
 
