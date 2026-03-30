@@ -4,24 +4,24 @@ const projects = [
   {
     imgSrc: './imgs/iot-site.png',
     title: 'IoT Dashboard',
-    tags: ['Full Stack', 'API', 'Dashboard'],
+    tags: ['Full Stack', 'API', 'Dashboard', 'Arduino'],
     projectLink: 'https://iot-dashboard-seven-zeta.vercel.app/',
   },
   {
     imgSrc: './imgs/Compass.png',
-    title: 'Digitalni Kompas',
+    title: 'Digital Compass',
     tags: ['Compass2', 'microC', 'Embedded'],
     projectLink: 'https://github.com/MarkoBjelica98/DigitalniKompas.git',
     previewImg: './imgs/Compass2.jpg',
     hasOptions: true,
     details: {
       overview:
-        'Digitalni kompas je embedded projekat razvijen u microC okruženju na EasyPIC PRO v7 ploči uz korišćenje Compass 2 modula. Projekat je fokusiran na očitavanje orijentacije i prikaz smjera na osnovu podataka dobijenih sa senzora.',
+        'The digital compass is an embedded project developed in the microC environment on the EasyPIC PRO v7 board using the Compass 2 module. The project is focused on orientation reading and direction display based on data obtained from sensors.',
       features: [
-        'Komunikacija sa Compass 2 modulom preko I2C protokola',
-        'Očitavanje podataka sa senzora i obrada vrijednosti',
-        'Pretvaranje sirovih podataka u smjer/orijentaciju',
-        'Prikaz rezultata rada projekta kroz funkcionalni embedded sistem',
+        'Communication with Compass 2 module via I2C protocol',
+        'Reading data from sensors and processing values',
+        'Converting raw data to direction/orientation',
+        'Presentation of the results of the project work through a functional embedded system',
       ],
       tech: ['EasyPIC PRO v7', 'Compass 2', 'microC', 'I2C'],
     },

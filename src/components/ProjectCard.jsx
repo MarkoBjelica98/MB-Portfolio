@@ -68,8 +68,8 @@ function ProjectCard({
 
           <p className='text-sm text-zinc-400'>
             {hasOptions
-              ? 'Klikni za više opcija o projektu.'
-              : 'Klikni za otvaranje projekta.'}
+              ? 'Click for more options about the project.'
+              : 'Click to open the project.'}
           </p>
         </div>
       </div>
@@ -87,7 +87,7 @@ function ProjectCard({
               <div className='pr-4'>
                 <h3 className='text-2xl font-semibold text-white'>{title}</h3>
                 <p className='text-sm text-zinc-400 mt-1'>
-                  Pregled embedded projekta i dostupnih opcija
+                  Overview of the embedded project and available options
                 </p>
               </div>
 
@@ -112,21 +112,21 @@ function ProjectCard({
                     rel='noreferrer'
                     className='rounded-xl bg-sky-500 hover:bg-sky-400 text-white text-center px-4 py-4 transition-colors font-medium'
                   >
-                    GitHub kod
+                    GitHub code
                   </a>
 
                   <button
                     onClick={() => setActiveView('image')}
                     className='rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-4 transition-colors font-medium border border-zinc-700'
                   >
-                    Slika projekta
+                    Project picture
                   </button>
 
                   <button
                     onClick={() => setActiveView('details')}
                     className='rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-4 transition-colors font-medium border border-zinc-700'
                   >
-                    Kako radi
+                    How it works
                   </button>
                 </div>
               )}
@@ -146,7 +146,7 @@ function ProjectCard({
                       onClick={() => setActiveView('menu')}
                       className='flex-1 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-3 transition-colors border border-zinc-700'
                     >
-                      Nazad
+                      Back
                     </button>
 
                     <a
@@ -155,7 +155,7 @@ function ProjectCard({
                       rel='noreferrer'
                       className='flex-1 rounded-xl bg-sky-500 hover:bg-sky-400 text-white text-center px-4 py-3 transition-colors'
                     >
-                      Otvori GitHub
+                      Open GitHub
                     </a>
                   </div>
                 </div>
@@ -174,7 +174,7 @@ function ProjectCard({
 
                   <div className='rounded-xl border border-zinc-800 bg-zinc-950/60 p-5'>
                     <h4 className='text-white text-lg font-semibold mb-3'>
-                      Ključne funkcionalnosti
+                      Key functionalities
                     </h4>
 
                     <ul className='space-y-2 text-zinc-300'>
@@ -209,7 +209,7 @@ function ProjectCard({
                       onClick={() => setActiveView('menu')}
                       className='flex-1 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-3 transition-colors border border-zinc-700'
                     >
-                      Nazad
+                      Back
                     </button>
 
                     <a
@@ -218,7 +218,7 @@ function ProjectCard({
                       rel='noreferrer'
                       className='flex-1 rounded-xl bg-sky-500 hover:bg-sky-400 text-white text-center px-4 py-3 transition-colors'
                     >
-                      Otvori GitHub
+                      Open GitHub
                     </a>
                   </div>
                 </div>

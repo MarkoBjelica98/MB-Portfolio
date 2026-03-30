@@ -2,28 +2,44 @@ import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const Navbar = ({ navOpen }) => {
-  const lastActiveLink = useRef();
-  const activeBox = useRef();
+  const lastActiveLink = useRef(null);
+  const activeBox = useRef(null);
 
-  const initActiveBox = () => {
-    activeBox.current.style.top = lastActiveLink.current.offsetTop + 'px';
-    activeBox.current.style.left = lastActiveLink.current.offsetLeft + 'px';
-    activeBox.current.style.width = lastActiveLink.current.offsetWidth + 'px';
-    activeBox.current.style.height = lastActiveLink.current.offsetHeight + 'px';
+  const updateActiveBox = (element) => {
+    if (!element || !activeBox.current) return;
+
+    activeBox.current.style.top = `${element.offsetTop}px`;
+    activeBox.current.style.left = `${element.offsetLeft}px`;
+    activeBox.current.style.width = `${element.offsetWidth}px`;
+    activeBox.current.style.height = `${element.offsetHeight}px`;
   };
 
-  useEffect(initActiveBox, []);
-  window.addEventListener('resize', initActiveBox);
+  useEffect(() => {
+    if (lastActiveLink.current) {
+      updateActiveBox(lastActiveLink.current);
+    }
+
+    const handleResize = () => {
+      if (lastActiveLink.current) {
+        updateActiveBox(lastActiveLink.current);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const activeCurrentLink = (event) => {
-    lastActiveLink.current?.classList.remove('active');
-    event.target.classList.add('active');
-    lastActiveLink.current = event.target;
+    const currentLink = event.currentTarget;
 
-    activeBox.current.style.top = event.target.offsetTop + 'px';
-    activeBox.current.style.left = event.target.offsetLeft + 'px';
-    activeBox.current.style.width = event.target.offsetWidth + 'px';
-    activeBox.current.style.height = event.target.offsetHeight + 'px';
+    lastActiveLink.current?.classList.remove('active');
+    currentLink.classList.add('active');
+    lastActiveLink.current = currentLink;
+
+    updateActiveBox(currentLink);
   };
 
   const navItems = [
@@ -31,7 +47,7 @@ const Navbar = ({ navOpen }) => {
       label: 'Home',
       link: '#home',
       className: 'nav-link active',
-      ref: lastActiveLink,
+      isDefault: true,
     },
     {
       label: 'About',
@@ -56,18 +72,19 @@ const Navbar = ({ navOpen }) => {
   ];
 
   return (
-    <nav className={'navbar ' + (navOpen ? 'active' : '')}>
-      {navItems.map(({ label, link, className, ref }, key) => (
+    <nav className={`navbar ${navOpen ? 'active' : ''}`}>
+      {navItems.map(({ label, link, className, isDefault }, key) => (
         <a
           href={link}
           key={key}
-          ref={ref}
+          ref={isDefault ? lastActiveLink : null}
           className={className}
           onClick={activeCurrentLink}
         >
           {label}
         </a>
       ))}
+
       <div className='active-box' ref={activeBox}></div>
     </nav>
   );
